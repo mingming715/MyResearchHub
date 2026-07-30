@@ -13,6 +13,8 @@ collections:
     output: false
   safety-regulation:
     output: false
+  x-feed:
+    output: false
   weekly:
     output: true
     permalink: /weekly/:title/

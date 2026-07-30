@@ -29,3 +29,23 @@ title: MyResearchHub
 {% else %}
 <p class="empty-state">아직 업데이트가 없습니다. 매일 아침 자동으로 채워집니다.</p>
 {% endif %}
+
+<h2 class="section-heading">X 피드</h2>
+{% assign xfeed = site.x-feed | sort: 'date' | reverse %}
+{% if xfeed.size > 0 %}
+<div class="feed-grid">
+{% for doc in xfeed %}
+  {% for item in doc.items %}
+  <a class="feed-card" href="{{ item.source_url }}" target="_blank" rel="noopener">
+    <div class="feed-meta">
+      <span class="feed-author">{{ item.author }}</span>
+      <span>{{ doc.date | date: "%Y-%m-%d" }}</span>
+    </div>
+    <p class="feed-text">{{ item.text }}</p>
+  </a>
+  {% endfor %}
+{% endfor %}
+</div>
+{% else %}
+<p class="empty-state">아직 X 피드가 없습니다.</p>
+{% endif %}
