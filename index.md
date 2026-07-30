@@ -2,33 +2,30 @@
 layout: default
 title: MyResearchHub
 ---
-
-# MyResearchHub
-
-자율주행 HW/SW, AI, Edge 양자화, 안전·규제 분야 리서치 아카이브.
-매일 아침 자동 업데이트되며, 매주 월요일 한 주 요약이 올라옵니다.
-
-## 이번 주 요약
-{% assign weekly = site.weekly | sort: 'date' | reverse %}
-{% if weekly.size > 0 %}
-- [{{ weekly[0].title }}]({{ weekly[0].url }})
-{% else %}
-- 아직 없음
+{% assign latest_weekly = site.weekly | sort: 'date' | reverse | first %}
+{% if latest_weekly %}
+<a class="weekly-banner" href="{{ latest_weekly.url | relative_url }}">
+  <div class="label">이번 주 리포트</div>
+  <div class="title">{{ latest_weekly.title }}</div>
+</a>
 {% endif %}
 
-## 카테고리별 최신 업데이트
-
-{% for col in site.collections %}
-{% unless col.label == 'weekly' or col.label == 'posts' %}
-### {{ col.label }}
-{% assign items = col.docs | sort: 'date' | reverse | slice: 0, 5 %}
-{% for item in items %}
-- [{{ item.title }}]({{ item.url }})
+{% assign all = site.autonomous-hw | concat: site.autonomous-sw | concat: site.ai-general | concat: site.edge-quantization | concat: site.safety-regulation | sort: 'date' | reverse %}
+{% if all.size > 0 %}
+<div class="card-row">
+{% for doc in all %}
+  {% for item in doc.items %}
+  <a class="card" data-category="{{ doc.category }}" href="{{ item.source_url }}" target="_blank" rel="noopener">
+    <div class="card-meta">
+      <span class="card-type">{{ item.type }}</span>
+      <span>{{ doc.date | date: "%Y-%m-%d" }}</span>
+    </div>
+    <h3 class="card-title">{{ item.title }}</h3>
+    <p class="card-summary">{{ item.summary }}</p>
+  </a>
+  {% endfor %}
 {% endfor %}
-{% endunless %}
-{% endfor %}
-
-## 전체 주간 리포트
-{% for w in weekly %}
-- [{{ w.title }}]({{ w.url }})
-{% endfor %}
+</div>
+{% else %}
+<p class="empty-state">아직 업데이트가 없습니다. 매일 아침 자동으로 채워집니다.</p>
+{% endif %}

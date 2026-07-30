@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title | default: site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    {% if page.url == "/" %}
+    <nav class="filter-nav" id="filter-nav">
+      <button class="filter-btn active" data-filter="all">전체</button>
+      <button class="filter-btn" data-filter="autonomous-hw">자율주행 HW</button>
+      <button class="filter-btn" data-filter="autonomous-sw">자율주행 SW</button>
+      <button class="filter-btn" data-filter="ai-general">AI 전반</button>
+      <button class="filter-btn" data-filter="edge-quantization">양자화</button>
+      <button class="filter-btn" data-filter="safety-regulation">안전·규제</button>
+    </nav>
+    {% else %}
+    <a class="back-link" href="{{ '/' | relative_url }}">← 홈</a>
+    {% endif %}
+    <a class="weekly-link" href="{{ '/weekly/' | relative_url }}">주간 리포트</a>
+  </div>
+</header>
+<main>
+  {{ content }}
+</main>
+<footer class="site-footer">
+  <p>{{ site.description }}</p>
+</footer>
+<script src="{{ '/assets/js/filter.js' | relative_url }}"></script>
+</body>
+</html>
