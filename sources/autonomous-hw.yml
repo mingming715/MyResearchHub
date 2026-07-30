@@ -1,10 +1,9 @@
 category: autonomous-hw
 title: 자율주행 HW
 queries:
-  - "automotive SoC NPU autonomous driving news"
-  - "GMSL MIPI A-PHY automotive ethernet sensor"
-sites:
-  - https://www.qualcomm.com/news/releases
-  - https://blogs.nvidia.com/blog/category/auto/
-x_accounts:
-  - "@AutoSensAI"
+  - "autonomous driving hardware trend 2026"
+  - "sensor fusion camera radar lidar architecture explained"
+  - "automotive SoC NPU autonomous driving comparison"
+  - "in-vehicle networking automotive ethernet sensor sync trend"
+sites: []
+x_accounts: []

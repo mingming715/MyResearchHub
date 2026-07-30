@@ -1,9 +1,9 @@
 category: edge-quantization
 title: Edge Device 양자화
 queries:
-  - "post-training quantization PTQ QAT edge inference paper"
-  - "LiDAR point cloud model quantization"
-sites:
-  - https://www.embedl.com/blog
-  - https://developer.qualcomm.com/blog
+  - "model quantization survey paper 2026"
+  - "on-device inference optimization trend"
+  - "neural network pruning quantization technique explained"
+  - "edge AI model compression research"
+sites: []
 x_accounts: []
