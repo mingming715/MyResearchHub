@@ -1,5 +1,6 @@
 title: MyResearchHub
 description: 자율주행 HW/SW, AI, Edge 양자화, 안전·규제 리서치 아카이브
+baseurl: /MyResearchHub
 
 collections:
   autonomous-hw:
