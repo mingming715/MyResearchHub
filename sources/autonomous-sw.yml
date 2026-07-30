@@ -1,9 +1,16 @@
 category: autonomous-sw
 title: 자율주행 SW / AI 모델
-queries:
-  - "autonomous driving perception model trend 2026"
-  - "sensor fusion BEV perception survey paper"
-  - "end-to-end autonomous driving research"
-  - "autonomous driving software stack architecture explained"
-sites: []
-x_accounts: []
+focus: >
+  센서 인식·융합·주행 판단을 담당하는 자율주행 소프트웨어/AI 모델이 어떤 방향으로
+  발전하는지 추적. 벤치마크 수치나 제품 출시 소식보다, 어떤 접근법이 어떤 문제를
+  풀려고 나왔는지(설계 철학)를 이해하는 데 우선순위.
+subtopics:
+  - BEV perception, 센서 퓨전 알고리즘 (BEVFusion, PointPillars, CenterPoint 등)
+  - End-to-end / Agentic 자율주행 모델 (VLA류 포함)
+  - 자율주행 SW 스택 아키텍처 (모듈형 vs end-to-end)
+  - 자율주행 관련 CVPR/ICLR/NeurIPS 급 논문 트렌드
+  - 시뮬레이션/합성 데이터 기반 학습 방법론
+example_queries:
+  - "BEV perception sensor fusion survey"
+  - "end-to-end autonomous driving model design philosophy"
+  - "autonomous driving software stack modular vs end-to-end"

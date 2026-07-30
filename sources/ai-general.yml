@@ -1,9 +1,15 @@
 category: ai-general
 title: AI 전반
-queries:
-  - "AI research trend this week"
-  - "large language model architecture explained"
-  - "AI agent research paper"
-  - "foundation model industry news"
-sites: []
-x_accounts: []
+focus: >
+  SAM 프로젝트와 직접 관련은 없지만 AI 개발자로서 계속 따라가야 할 일반 AI
+  트렌드. 특정 회사의 마케팅성 발표보다 아키텍처/연구 방향/개념적 진전을
+  이해하는 데 우선순위.
+subtopics:
+  - LLM/파운데이션 모델 아키텍처 및 학습 방법론의 진전
+  - AI 에이전트 설계 패턴 (도구 사용, 멀티에이전트, 메모리 등)
+  - 정렬(alignment)·안전성 연구 동향
+  - 널리 인용되는 새 논문이나 개념 (직접 실무와 무관해도 교양 차원에서 유의미하면 포함)
+example_queries:
+  - "LLM architecture research advance explained"
+  - "AI agent design pattern research"
+  - "AI alignment safety research trend"

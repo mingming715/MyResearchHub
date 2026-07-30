@@ -1,9 +1,16 @@
 category: autonomous-hw
 title: 자율주행 HW
-queries:
-  - "autonomous driving hardware trend 2026"
-  - "sensor fusion camera radar lidar architecture explained"
-  - "automotive SoC NPU autonomous driving comparison"
-  - "in-vehicle networking automotive ethernet sensor sync trend"
-sites: []
-x_accounts: []
+focus: >
+  자율주행에 쓰이는 센서·SoC·차량 내 네트워킹 하드웨어가 어떤 문제를 풀기 위해
+  어떤 방향으로 발전하고 있는지 추적. 특정 벤더의 발표보다 아키텍처·트레이드오프·
+  기술적 배경을 이해하는 데 우선순위.
+subtopics:
+  - 카메라/레이더/라이다 센서 융합 하드웨어 아키텍처
+  - 자율주행용 SoC/NPU 설계 (연산 효율, 전력, 안전 인증 트레이드오프)
+  - 센서-SoC 인터페이스 표준 (GMSL, MIPI A-PHY, Automotive Ethernet 등)
+  - 센서 동기화/타이밍 기술
+  - 차세대 센서 기술 (4D 레이더, solid-state lidar 등)
+example_queries:
+  - "autonomous driving sensor hardware architecture trend"
+  - "automotive SoC NPU design tradeoffs explained"
+  - "in-vehicle sensor networking standard comparison"

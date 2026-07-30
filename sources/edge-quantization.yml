@@ -1,9 +1,16 @@
 category: edge-quantization
-title: Edge Device 양자화
-queries:
-  - "model quantization survey paper 2026"
-  - "on-device inference optimization trend"
-  - "neural network pruning quantization technique explained"
-  - "edge AI model compression research"
-sites: []
-x_accounts: []
+title: Edge Device 양자화 / 모델 경량화
+focus: >
+  온디바이스 추론을 위한 모델 경량화 기법이 어떤 정확도-효율 트레이드오프를
+  풀어가고 있는지 추적. 특정 툴킷 홍보보다 기법 자체의 원리와 한계를 이해하는
+  데 우선순위.
+subtopics:
+  - PTQ/QAT 등 양자화 기법의 원리와 최신 변형
+  - Pruning, NAS, 지식 증류 등 다른 경량화 기법과의 비교
+  - 온디바이스 추론 최적화 (레이턴시, 메모리, 전력)
+  - LiDAR/포인트클라우드 등 비-이미지 도메인의 양자화 이슈
+  - 양자화가 정확도에 미치는 영향과 이를 완화하는 기법
+example_queries:
+  - "post-training quantization technique explained"
+  - "model compression quantization pruning tradeoff"
+  - "on-device inference optimization latency accuracy"

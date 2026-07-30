@@ -1,8 +1,15 @@
 category: safety-regulation
 title: 자율주행 안전·규제
-queries:
-  - "autonomous vehicle safety standard trend"
-  - "AI safety regulation autonomous driving explained"
-  - "self-driving car regulation update"
-sites: []
-x_accounts: []
+focus: >
+  자율주행 HW/SW 양쪽에 걸친 안전·규제 동향 추적. 법 개정 뉴스 자체보다,
+  왜 이런 표준/규제가 필요해졌는지와 실제 개발에 어떤 제약을 거는지를
+  이해하는 데 우선순위.
+subtopics:
+  - ISO 26262 (기능안전), ISO/PAS 8800 (AI 안전), ISO 21448 (SOTIF)
+  - UNECE 자율주행 규정, Euro NCAP 로드맵
+  - 검증/테스트 방법론 (시뮬레이션 기반 검증, 엣지 케이스 커버리지 등)
+  - AI 모델의 안전성 입증(assurance case) 관련 논의
+example_queries:
+  - "autonomous vehicle safety standard explained"
+  - "AI safety case autonomous driving regulation"
+  - "self-driving car verification validation methodology"
