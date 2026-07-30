@@ -1,0 +1,10 @@
+category: autonomous-hw
+title: 자율주행 HW
+queries:
+  - "automotive SoC NPU autonomous driving news"
+  - "GMSL MIPI A-PHY automotive ethernet sensor"
+sites:
+  - https://www.qualcomm.com/news/releases
+  - https://blogs.nvidia.com/blog/category/auto/
+x_accounts:
+  - "@AutoSensAI"

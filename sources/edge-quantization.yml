@@ -1,0 +1,9 @@
+category: edge-quantization
+title: Edge Device 양자화
+queries:
+  - "post-training quantization PTQ QAT edge inference paper"
+  - "LiDAR point cloud model quantization"
+sites:
+  - https://www.embedl.com/blog
+  - https://developer.qualcomm.com/blog
+x_accounts: []

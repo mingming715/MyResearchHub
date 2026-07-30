@@ -1,0 +1,9 @@
+category: ai-general
+title: AI 전반
+queries:
+  - "Anthropic Claude new model release"
+  - "OpenAI Google DeepMind foundation model news"
+sites:
+  - https://www.anthropic.com/news
+  - https://openai.com/news/
+x_accounts: []

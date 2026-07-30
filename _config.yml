@@ -1,0 +1,55 @@
+title: MyResearchHub
+description: 자율주행 HW/SW, AI, Edge 양자화, 안전·규제 리서치 아카이브
+theme: jekyll-theme-minimal
+
+collections:
+  autonomous-hw:
+    output: true
+    permalink: /autonomous-hw/:year-:month-:day-:title/
+  autonomous-sw:
+    output: true
+    permalink: /autonomous-sw/:year-:month-:day-:title/
+  ai-general:
+    output: true
+    permalink: /ai-general/:year-:month-:day-:title/
+  edge-quantization:
+    output: true
+    permalink: /edge-quantization/:year-:month-:day-:title/
+  safety-regulation:
+    output: true
+    permalink: /safety-regulation/:year-:month-:day-:title/
+  weekly:
+    output: true
+    permalink: /weekly/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: autonomous-hw
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: autonomous-sw
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: ai-general
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: edge-quantization
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: safety-regulation
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: weekly
+    values:
+      layout: default
