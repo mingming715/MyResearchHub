@@ -1,0 +1,33 @@
+document.addEventListener("DOMContentLoaded", function () {
+  var panels = document.querySelectorAll(".week-panel");
+  if (!panels.length) return;
+
+  function isoWeek(date) {
+    var d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+    var day = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - day);
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+    var week = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+    return d.getUTCFullYear() + "-W" + String(week).padStart(2, "0");
+  }
+
+  var buttons = document.querySelectorAll(".week-btn");
+  var currentWeek = isoWeek(new Date());
+  var available = Array.prototype.map.call(panels, function (p) { return p.dataset.week; });
+  var defaultWeek = available.indexOf(currentWeek) !== -1 ? currentWeek : available[0];
+
+  buttons.forEach(function (b) {
+    if (b.dataset.week === currentWeek) b.textContent = "이번 주";
+  });
+
+  function showWeek(wk) {
+    panels.forEach(function (p) { p.hidden = p.dataset.week !== wk; });
+    buttons.forEach(function (b) { b.classList.toggle("active", b.dataset.week === wk); });
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () { showWeek(b.dataset.week); });
+  });
+
+  showWeek(defaultWeek);
+});

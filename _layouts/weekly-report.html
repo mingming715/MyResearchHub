@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title | default: site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="back-link" href="{{ '/weekly/' | relative_url }}">← 주간 리포트 목록</a>
+    <a class="weekly-link" href="{{ '/' | relative_url }}">홈</a>
+  </div>
+</header>
+<main>
+  <h1 class="weekly-title">{{ page.title }}</h1>
+  <div id="weekly-highlights" class="weekly-highlights"></div>
+  <div id="weekly-content" class="weekly-content">
+    {{ content }}
+  </div>
+</main>
+<footer class="site-footer">
+  <p>{{ site.description }}</p>
+</footer>
+<script src="{{ '/assets/js/weekly-report.js' | relative_url }}"></script>
+</body>
+</html>

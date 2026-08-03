@@ -182,6 +182,29 @@ main {
   padding: 2rem 0;
 }
 
+.week-nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.week-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.week-btn.active {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
 .weekly-list {
   list-style: none;
   padding: 0;
@@ -274,4 +297,108 @@ main {
 
 @media (max-width: 560px) {
   .feed-grid { columns: 1; }
+}
+
+.weekly-title {
+  font-size: 1.6rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.weekly-highlights {
+  margin-bottom: 2rem;
+}
+
+.weekly-quotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.highlight-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--cat-color, var(--accent));
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
+.highlight-card[data-category="autonomous-hw"] { --cat-color: #3b82f6; }
+.highlight-card[data-category="autonomous-sw"] { --cat-color: #8b5cf6; }
+.highlight-card[data-category="ai-general"] { --cat-color: #14b8a6; }
+.highlight-card[data-category="edge-quantization"] { --cat-color: #f59e0b; }
+.highlight-card[data-category="safety-regulation"] { --cat-color: #f43f5e; }
+
+.highlight-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.highlight-quote {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.weekly-keywords-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.weekly-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.keyword-chip {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  color: var(--fg);
+}
+
+.weekly-content {
+  max-width: 720px;
+  line-height: 1.75;
+}
+
+.weekly-section {
+  border-left: 3px solid var(--cat-color, var(--border));
+  padding-left: 1rem;
+  margin: 1.75rem 0;
+}
+
+.weekly-section[data-category="autonomous-hw"] { --cat-color: #3b82f6; }
+.weekly-section[data-category="autonomous-sw"] { --cat-color: #8b5cf6; }
+.weekly-section[data-category="ai-general"] { --cat-color: #14b8a6; }
+.weekly-section[data-category="edge-quantization"] { --cat-color: #f59e0b; }
+.weekly-section[data-category="safety-regulation"] { --cat-color: #f43f5e; }
+
+.weekly-content h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.75rem;
+}
+
+.weekly-content p {
+  margin: 0 0 1rem;
+}
+
+.weekly-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.weekly-content a:hover {
+  opacity: 0.75;
 }
