@@ -11,13 +11,30 @@ document.addEventListener("DOMContentLoaded", function () {
     return d.getUTCFullYear() + "-W" + String(week).padStart(2, "0");
   }
 
+  // ISO week "YYYY-Www" -> the Monday that starts that week.
+  function isoWeekMonday(wk) {
+    var m = wk.match(/^(\d+)-W(\d+)$/);
+    var jan4 = new Date(Date.UTC(+m[1], 0, 4));
+    var jan4Day = jan4.getUTCDay() || 7;
+    var monday = new Date(jan4);
+    monday.setUTCDate(jan4.getUTCDate() - jan4Day + 1 + (+m[2] - 1) * 7);
+    return monday;
+  }
+
+  function weekLabel(wk) {
+    var monday = isoWeekMonday(wk);
+    var month = monday.getUTCMonth() + 1;
+    var weekOfMonth = Math.ceil(monday.getUTCDate() / 7);
+    return month + "월 " + weekOfMonth + "주차";
+  }
+
   var buttons = document.querySelectorAll(".week-btn");
   var currentWeek = isoWeek(new Date());
   var available = Array.prototype.map.call(panels, function (p) { return p.dataset.week; });
   var defaultWeek = available.indexOf(currentWeek) !== -1 ? currentWeek : available[0];
 
   buttons.forEach(function (b) {
-    if (b.dataset.week === currentWeek) b.textContent = "이번 주";
+    b.textContent = b.dataset.week === currentWeek ? "이번 주" : weekLabel(b.dataset.week);
   });
 
   function showWeek(wk) {

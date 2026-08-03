@@ -26,7 +26,7 @@ title: MyResearchHub
 {% endfor %}
 {% assign week_keys = week_keys | sort | reverse %}
 
-{% if week_keys.size > 1 %}
+{% if week_keys.size > 0 %}
 <nav class="week-nav" id="week-nav">
 {% for wk in week_keys %}
   <button class="week-btn" data-week="{{ wk }}">{{ wk }}</button>
