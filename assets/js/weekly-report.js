@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+  document.title = weekLabelize(document.title);
+  document.querySelectorAll(".weekly-title").forEach(humanizeWeekText);
+
   var content = document.getElementById("weekly-content");
   var highlights = document.getElementById("weekly-highlights");
   if (!content || !highlights) return;

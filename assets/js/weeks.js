@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".weekly-banner .title, .weekly-list li a").forEach(humanizeWeekText);
+
   var panels = document.querySelectorAll(".week-panel");
   if (!panels.length) return;
 
@@ -9,23 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
     var week = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
     return d.getUTCFullYear() + "-W" + String(week).padStart(2, "0");
-  }
-
-  // ISO week "YYYY-Www" -> the Monday that starts that week.
-  function isoWeekMonday(wk) {
-    var m = wk.match(/^(\d+)-W(\d+)$/);
-    var jan4 = new Date(Date.UTC(+m[1], 0, 4));
-    var jan4Day = jan4.getUTCDay() || 7;
-    var monday = new Date(jan4);
-    monday.setUTCDate(jan4.getUTCDate() - jan4Day + 1 + (+m[2] - 1) * 7);
-    return monday;
-  }
-
-  function weekLabel(wk) {
-    var monday = isoWeekMonday(wk);
-    var month = monday.getUTCMonth() + 1;
-    var weekOfMonth = Math.ceil(monday.getUTCDate() / 7);
-    return month + "월 " + weekOfMonth + "주차";
   }
 
   var buttons = document.querySelectorAll(".week-btn");
