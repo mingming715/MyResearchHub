@@ -1,0 +1,30 @@
+---
+title: "자율주행 안전·규제 업데이트 (2026-09-26)"
+date: 2026-09-26
+category: safety-regulation
+items:
+  - title: "중국 GB 44721-2026 — 자율주행에도 '전 생애주기 안전관리체계'를 의무화하다"
+    type: "뉴스"
+    summary: "중국 공업정보화부(MIIT)가 2027년 7월 시행을 목표로 발표한 GB 44721-2026은 L3/L4 자율주행 시스템을 탑재한 승용·상용차에 적용되는 세계 최초의 의무 국가표준이다. 이 표준은 자율주행차가 '숙련되고 주의 깊은 운전자 수준 이상'의 안전성을 갖춰야 한다는 원칙을 못 박는 데 그치지 않고, 제조사에게 설계-생산-출시 후 운영에 이르는 전 생애주기에 걸쳐 안전정책·위험관리·안전보증·지속개선 네 가지 축으로 구성된 안전관리체계(SMS)를 구축하도록 강제한다. 실제 인증은 기업 역량 심사, 안전문서 검토, 그리고 폐쇄구간·실도로·시뮬레이션(GB/T 47025 등)을 결합한 제3자 확인시험으로 이뤄지기 때문에, 개발팀은 단순히 주행 성능 지표를 넘어 최소위험전략(MRS) 발동 조건과 안전 근거 문서화 절차까지 사전에 표준화된 형식으로 갖춰야 한다는 구체적 제약이 생긴다."
+    source_url: "https://www.automotiveworld.com/news/china-issues-mandatory-standard-for-automated-driving/"
+  - title: "UN GTR 자율주행 규정 정식 채택 — 이제 '안전관리체계' 없이는 시장 진입도 없다"
+    type: "뉴스"
+    summary: "2026년 WP.29 199차 회기에서 약 10년간의 논의 끝에 자율주행시스템(ADS)에 대한 UN 글로벌기술규정(GTR)과 UN 규정 185호가 정식 채택되며, 미국·EU·일본·중국·영국·캐나다 등 주요 시장이 공유하는 최초의 국제 공통 검증 틀이 마련됐다. 핵심은 단발성 형식 승인이 아니라 제조사가 개발·생산·배치·사후 운영 전 과정을 관리하는 안전관리체계를 상시 운영하고 주기적으로 내부·외부 독립 감사를 받도록 요구한다는 점이며, 검증 방법론도 시뮬레이션·폐쇄시험장·실도로 시험을 결합한 다층 구조로 규정해 규제당국이 제조사의 시나리오 분석이 '합리적으로 예견 가능한 상황'을 실제로 포괄하는지 감사하도록 못박았다. 이는 자율주행 개발이 이제 한 번의 인증 통과가 아니라 차량 수명 전체에 걸친 지속적 증거 축적과 감사 대응 체계를 전제로 설계돼야 함을 뜻한다."
+    source_url: "https://environmentalhealthsafetybrief.sidley.com/2026/03/04/a-new-global-milestone-for-autonomous-vehicles-what-the-un-global-technical-regulation-on-automated-driving-systems-means-for-autonomy-in-the-u-s-and-around-the-world/"
+  - title: "오로라 세이프티 케이스, 외부 감사를 받다 — '자기 채점'으로는 안 통하는 시대"
+    type: "뉴스"
+    summary: "자율주행 트럭업체 오로라(Aurora)가 2026년 초 독립 안전평가 기관 Edge Case에 의뢰해 자사 세이프티 케이스(Safety Case) 전체 구조와 핵심 주장들을 외부 검증받았으며, 그 결과가 6월 공개됐다. Edge Case는 NHTSA가 요구하는 연방 안전요소, UL4600, ISO 26262, AVSC의 자율주행 안전평가 프레임워크(CSE) 등 복수 표준을 기준으로 세이프티 케이스의 논증 구조를 검토하고, 근거 자료는 전수조사 대신 독립적으로 표본을 선정해 검증하는 방식을 택했다. 이는 자율주행사가 발표하는 세이프티 케이스가 지금까지 대부분 회사 자체 문서에 불과해 외부에서 신뢰성을 확인할 방법이 없었다는 문제의식에서 나온 것으로, 앞으로 로보택시·자율주행 트럭 사업자에게 '자체 발간 안전 주장'이 아니라 '제3자가 표본 검증한 안전 주장'을 요구하는 업계 관행의 전환점이 될 수 있다."
+    source_url: "https://www.businesswire.com/news/home/20260625100653/en/Edge-Case-Conducts-Independent-Comprehensive-Assessment-for-Aurora-Setting-New-Bar-for-Autonomous-Vehicle-Safety-Assurance"
+  - title: "세이프티 케이스도 '애자일'하게 — 정작 평가 방법론 자체가 없었다는 맹점"
+    type: "논문"
+    summary: "SAE 기술논문 'Agile Safety Case Assessments for Autonomous Vehicle Fleets'(2026-01-0521)는 로보택시·자율주행 트럭이 실제 배치를 앞두고 늘어나는 상황에서도 정작 '세이프티 케이스를 어떻게 체계적으로 평가할 것인가'에 대한 방법론이 거의 개발되지 않았다는 공백을 지적한다. 저자들은 Open Autonomy Safety Case(OASC) 같은 기존에 검토된 사례에 논증 구조를 추적 연결하는 1단계, 그 논증을 뒷받침하는 증거의 품질을 구조적으로 평가하는 2단계로 이뤄진 3단계 애자일 평가 절차를 제안하고 이를 복수 AV 개발사의 실제 세이프티 케이스에 적용했다. 세이프티 케이스가 개발 도중 계속 바뀌는 살아있는 문서인데도 매번 전면 재평가를 하면 인증 병목이 생기기 때문에, 표준 대비 추적성을 먼저 확보해 두면 개발 중간중간 반복적으로 안전 논증의 빈틈을 조기에 잡아낼 수 있다는 점에서 실제 인증 일정에 직접적인 제약과 이점을 동시에 준다."
+    source_url: "https://saemobilus.sae.org/papers/agile-safety-case-assessments-autonomous-vehicle-fleets-2026-01-0521"
+  - title: "시나리오 하나하나 대신 '확률 지도'로 검증하기 — 요크대의 상황 커버리지 그리드"
+    type: "논문"
+    summary: "'Probabilistic Safety Verification for an Autonomous Ground Vehicle: A Situation Coverage Grid Approach'(arXiv:2507.12158, 요크대 Centre for Assuring Autonomy)는 자율주행 검증에서 흔히 쓰는 '시나리오를 몇 개나 통과했는가' 식의 이분법적 합/불 판정 대신, 차량이 마주칠 수 있는 환경 구성을 격자(grid) 형태로 빠짐없이 나열하고 실제 상황 기반 테스트에서 수집한 전이 확률 데이터를 결합해 확률 모델을 만든 뒤, 위험분석에서 도출한 안전 속성을 확률적 모델체킹으로 검증하는 방법을 제시한다. 단순 시나리오 커버리지만으로는 '어떤 상황이 실제로 위험한지, 그 위험이 얼마나 자주 발생하는지'를 정량적으로 말할 수 없어 규제기관이 요구하는 '정량적 안전 근거'에 못 미치기 때문에, 개발팀은 위험 시나리오 식별뿐 아니라 그 확률적 크기까지 제시해야 하는 더 높은 검증 부담을 지게 된다."
+    source_url: "https://arxiv.org/abs/2507.12158"
+  - title: "ISO 26262 3판, 머신러닝을 정식 편입하다 — 학습 데이터도 이제 '형상관리 대상'"
+    type: "개념정리"
+    summary: "2023년 가을부터 준비돼 2026년 위원회 초안(CD)·국제표준안(DIS) 단계를 거쳐 2027년 발간을 목표로 하는 ISO 26262 3판은, 기존 소프트웨어 중심으로 짜인 Part 6 요구사항을 머신러닝 컴포넌트에 맞게 손보고 Annex C(구성 항목 관리)를 확장해 학습 데이터를 다루는 가이드라인을 신설하는 것이 핵심이다. 지금까지 2판은 딥러닝·머신러닝 기반 인지·판단 모듈을 사실상 상정하지 않고 만들어져, 제조사들이 ISO/PAS 8800이나 자체 해석에 의존해 끼워 맞춰 인증해 온 것이 문제였다. 3판이 적용되면 학습 데이터셋 자체가 소프트웨어 형상 항목처럼 버전 관리·변경 이력 추적·검증 대상이 되어야 하므로, AI 모델을 쓰는 자율주행·ADAS 개발팀은 데이터 파이프라인 단계부터 기능안전 문서화 의무를 지게 되는 구조적 변화를 맞게 된다."
+    source_url: "https://www.ul.com/sis/blog/what-to-expect-with-version-3-of-iso-26262"
+---
