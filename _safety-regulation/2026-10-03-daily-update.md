@@ -13,7 +13,7 @@ items:
     source_url: "https://www.keysight.com/us/en/about/newsroom/catalog/news-release.2026.0903_pr26-092_keysight-collaborates-with-the-centre-for-assuring-autonomy-at-the-university-of-york-to-advance-ai-safety-assurance-for-software-defined-vehicles.html"
   - title: "차량에 LLM을 넣으려면 ISO 21448만으론 부족하다 — Talk2Drive로 본 LLM 특화 안전 결함"
     type: "논문"
-    summary: "차량 제어에 LLM(대형언어모델)을 통합하려는 시도가 늘면서, 기존 SOTIF(ISO 21448)가 다루는 지연시간 등 '엔지니어링적 불충분성'만으로는 안전을 담보할 수 없고, ISO/PAS 8800이 짧게만 언급하는 정렬(alignment) 문제 같은 LLM 특유의 결함 모드가 자동차 안전 논의에서 빠져 있다는 점을 오픈소스 LLM 기반 주행 프레임워크 'Talk2Drive' 사례로 분석한 논문이다. 연구진은 LLM이 운전 중 위험한 자연어 지시를 그대로 수행하거나, 모델 업데이트로 응답이 예측과 달라지는 구체적 위험 시나리오에 대해 안전 논증(safety argument)을 시범 구축했는데, 결과적으로 "정렬 문제는 자동차 안전 문헌에서 아직 거의 다뤄지지 않았다"는 공백을 드러냈다. 이는 LLM 기반 기능을 차량에 넣으려는 개발팀에게 기존 표준 체크리스트 통과만으로는 충분한 안전 근거가 되지 않으며, 별도의 정렬·강건성 테스트와 논증을 추가해야 한다는 제약을 시사한다."
+    summary: "차량 제어에 LLM(대형언어모델)을 통합하려는 시도가 늘면서, 기존 SOTIF(ISO 21448)가 다루는 지연시간 등 '엔지니어링적 불충분성'만으로는 안전을 담보할 수 없고, ISO/PAS 8800이 짧게만 언급하는 정렬(alignment) 문제 같은 LLM 특유의 결함 모드가 자동차 안전 논의에서 빠져 있다는 점을 오픈소스 LLM 기반 주행 프레임워크 'Talk2Drive' 사례로 분석한 논문이다. 연구진은 LLM이 운전 중 위험한 자연어 지시를 그대로 수행하거나, 모델 업데이트로 응답이 예측과 달라지는 구체적 위험 시나리오에 대해 안전 논증(safety argument)을 시범 구축했는데, 결과적으로 \"정렬 문제는 자동차 안전 문헌에서 아직 거의 다뤄지지 않았다\"는 공백을 드러냈다. 이는 LLM 기반 기능을 차량에 넣으려는 개발팀에게 기존 표준 체크리스트 통과만으로는 충분한 안전 근거가 되지 않으며, 별도의 정렬·강건성 테스트와 논증을 추가해야 한다는 제약을 시사한다."
     source_url: "https://arxiv.org/abs/2606.14327"
   - title: "위험장(Risk Field)으로 희귀 시나리오를 솎아낸다 — 디지털 트윈 기반 자율주행 안전검증 프레임워크"
     type: "논문"
