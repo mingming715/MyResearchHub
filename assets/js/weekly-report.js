@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var content = document.getElementById("weekly-content");
   var highlights = document.getElementById("weekly-highlights");
+  var toc = document.getElementById("toc-list");
   if (!content || !highlights) return;
 
   var CATEGORIES = [
@@ -28,67 +29,108 @@ document.addEventListener("DOMContentLoaded", function () {
     return end === -1 ? text : text.slice(0, end + 1);
   }
 
-  // Group flat h2/p/... children into per-section wrappers, colored by category.
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text) e.textContent = text;
+    return e;
+  }
+
+  // Group flat h2/p/... children into per-section wrappers (all sections, so each gets a TOC anchor).
   var sections = [];
   var current = null;
-  Array.prototype.slice.call(content.children).forEach(function (el) {
-    if (el.tagName === "H2") {
-      current = { heading: el, cat: categoryFor(el.textContent), nodes: [el] };
+  Array.prototype.slice.call(content.children).forEach(function (node) {
+    if (node.tagName === "H2") {
+      current = { heading: node, cat: categoryFor(node.textContent), nodes: [node] };
       sections.push(current);
     } else if (current) {
-      current.nodes.push(el);
+      current.nodes.push(node);
     }
   });
 
-  sections.forEach(function (s) {
-    if (!s.cat) return;
-    var wrap = document.createElement("div");
-    wrap.className = "weekly-section";
-    wrap.dataset.category = s.cat;
+  sections.forEach(function (s, i) {
+    var wrap = el("section", "weekly-section");
+    wrap.id = "s" + (i + 1);
+    if (s.cat) wrap.dataset.category = s.cat;
     s.nodes[0].replaceWith(wrap);
     s.nodes.forEach(function (n) { wrap.appendChild(n); });
+    s.wrap = wrap;
+
+    var links = wrap.querySelectorAll("a");
+    if (toc) {
+      var a = el("a", "toc-item");
+      a.href = "#" + wrap.id;
+      if (s.cat) a.dataset.category = s.cat;
+      a.appendChild(el("span", "toc-text", s.heading.textContent));
+      if (links.length) a.appendChild(el("span", "toc-count", String(links.length)));
+      toc.appendChild(a);
+      s.tocLink = a;
+    }
   });
 
-  // Highlight strip: first sentence of each topic section, quoted.
-  var quotes = document.createElement("div");
-  quotes.className = "weekly-quotes";
+  // TL;DR: first sentence of each topic section, linked to the section.
+  var tldr = el("div", "tldr");
+  tldr.appendChild(el("div", "tldr-label", "이번 주 한 줄 요약"));
   sections.forEach(function (s) {
     if (!s.cat) return;
-    var p = s.nodes.find(function (n) { return n.tagName === "P"; });
-    var sentence = firstSentence(p);
+    var sentence = firstSentence(s.nodes.find(function (n) { return n.tagName === "P"; }));
     if (!sentence) return;
-    var card = document.createElement("div");
-    card.className = "highlight-card";
-    card.dataset.category = s.cat;
-    card.innerHTML =
-      '<div class="highlight-label">' + s.heading.textContent + "</div>" +
-      '<p class="highlight-quote">“' + sentence + '”</p>';
-    quotes.appendChild(card);
+    var row = el("a", "tldr-row");
+    row.href = "#" + s.wrap.id;
+    row.dataset.category = s.cat;
+    row.appendChild(el("span", "cat-tag", s.heading.textContent));
+    row.appendChild(el("span", "tldr-text", sentence));
+    tldr.appendChild(row);
   });
-  if (quotes.children.length) highlights.appendChild(quotes);
+  if (tldr.children.length > 1) highlights.appendChild(tldr);
 
-  // Keyword cloud: every linked phrase mentioned this week, deduped.
-  var seen = {};
-  var terms = [];
-  content.querySelectorAll("a").forEach(function (a) {
-    var t = a.textContent.trim();
-    if (t && !seen[t]) { seen[t] = true; terms.push(t); }
-  });
-  if (terms.length) {
-    var cloud = document.createElement("div");
-    cloud.className = "weekly-keywords";
-    var cloudLabel = document.createElement("div");
-    cloudLabel.className = "weekly-keywords-label";
-    cloudLabel.textContent = "이번 주 키워드";
-    highlights.appendChild(cloudLabel);
-    terms.forEach(function (t) {
-      var chip = document.createElement("span");
-      chip.className = "keyword-chip";
-      var size = Math.max(0.75, Math.min(1.1, 1.3 - t.length / 40));
-      chip.style.fontSize = size + "rem";
-      chip.textContent = t;
-      cloud.appendChild(chip);
+  // Every source mentioned this week, grouped by section and collapsed by default.
+  var total = 0;
+  var details = el("details", "sources");
+  var summary = el("summary");
+  details.appendChild(summary);
+  sections.forEach(function (s) {
+    if (!s.cat) return;
+    var links = s.wrap.querySelectorAll("a");
+    if (!links.length) return;
+    var group = el("div", "sources-group");
+    group.dataset.category = s.cat;
+    group.appendChild(el("div", "cat-tag", s.heading.textContent));
+    var ul = el("ul");
+    links.forEach(function (link) {
+      var li = el("li");
+      var a = el("a", null, link.textContent.trim());
+      a.href = link.href;
+      a.target = "_blank";
+      a.rel = "noopener";
+      li.appendChild(a);
+      ul.appendChild(li);
+      total++;
     });
-    highlights.appendChild(cloud);
+    group.appendChild(ul);
+    details.appendChild(group);
+  });
+  if (total) {
+    summary.textContent = "이번 주 다룬 소스 " + total + "개 모아보기";
+    highlights.appendChild(details);
+  }
+
+  // Body links open in a new tab, like everywhere else on the site.
+  content.querySelectorAll("a").forEach(function (a) {
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  // Highlight the TOC entry for the section currently in view.
+  if ("IntersectionObserver" in window && toc) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        sections.forEach(function (s) {
+          s.tocLink.classList.toggle("active", s.wrap === e.target);
+        });
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+    sections.forEach(function (s) { io.observe(s.wrap); });
   }
 });

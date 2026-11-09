@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".weekly-banner .title, .weekly-list li a").forEach(humanizeWeekText);
+  document.querySelectorAll(".weekly-banner .title, .weekly-list .title").forEach(humanizeWeekText);
 
   var panels = document.querySelectorAll(".week-panel");
-  if (!panels.length) return;
+  var select = document.getElementById("week-select");
+  if (!panels.length || !select) return;
 
   function isoWeek(date) {
     var d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
@@ -13,23 +14,26 @@ document.addEventListener("DOMContentLoaded", function () {
     return d.getUTCFullYear() + "-W" + String(week).padStart(2, "0");
   }
 
-  var buttons = document.querySelectorAll(".week-btn");
   var currentWeek = isoWeek(new Date());
-  var available = Array.prototype.map.call(panels, function (p) { return p.dataset.week; });
-  var defaultWeek = available.indexOf(currentWeek) !== -1 ? currentWeek : available[0];
-
-  buttons.forEach(function (b) {
-    b.textContent = b.dataset.week === currentWeek ? "이번 주" : weekLabel(b.dataset.week);
+  Array.prototype.forEach.call(select.options, function (o) {
+    o.textContent = o.value === currentWeek ? "이번 주 · " + weekLabel(o.value) : weekLabel(o.value);
   });
+
+  var older = document.getElementById("week-older");
+  var newer = document.getElementById("week-newer");
 
   function showWeek(wk) {
+    select.value = wk;
     panels.forEach(function (p) { p.hidden = p.dataset.week !== wk; });
-    buttons.forEach(function (b) { b.classList.toggle("active", b.dataset.week === wk); });
+    // Options are newest-first, so "older" moves down the list.
+    older.disabled = select.selectedIndex === select.options.length - 1;
+    newer.disabled = select.selectedIndex === 0;
   }
 
-  buttons.forEach(function (b) {
-    b.addEventListener("click", function () { showWeek(b.dataset.week); });
-  });
+  select.addEventListener("change", function () { showWeek(select.value); });
+  older.addEventListener("click", function () { showWeek(select.options[select.selectedIndex + 1].value); });
+  newer.addEventListener("click", function () { showWeek(select.options[select.selectedIndex - 1].value); });
 
-  showWeek(defaultWeek);
+  var values = Array.prototype.map.call(select.options, function (o) { return o.value; });
+  showWeek(values.indexOf(currentWeek) !== -1 ? currentWeek : values[0]);
 });
