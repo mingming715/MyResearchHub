@@ -68,7 +68,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // TL;DR: first sentence of each topic section, linked to the section.
+  // New-format reports: tag special sections and color per-category h3 blocks.
+  sections.forEach(function (s) {
+    var h = s.heading.textContent;
+    if (h.indexOf("핵심") !== -1) s.wrap.dataset.kind = "key";
+    if (h.indexOf("꼭 읽을") !== -1) s.wrap.dataset.kind = "must";
+
+    // Group each h3 with the nodes after it; color by the `카테고리` code tag or the heading text.
+    Array.prototype.slice.call(s.wrap.querySelectorAll(":scope > h3")).forEach(function (h3) {
+      var tag = h3.querySelector("code");
+      var cat = categoryFor(tag ? tag.textContent : h3.textContent);
+      var block = el("div", "sub-block");
+      if (cat) block.dataset.category = cat;
+      h3.before(block);
+      var n = h3;
+      while (n && !(n !== h3 && n.tagName === "H3")) {
+        var next = n.nextElementSibling;
+        block.appendChild(n);
+        n = next;
+      }
+    });
+  });
+
+  // TL;DR (old-format reports only): first sentence of each category section.
   var tldr = el("div", "tldr");
   tldr.appendChild(el("div", "tldr-label", "이번 주 한 줄 요약"));
   sections.forEach(function (s) {

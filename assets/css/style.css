@@ -553,3 +553,67 @@ main.weekly-report { max-width: 1120px; }
   color: var(--fg);
 }
 .pick-reason strong { color: var(--pick); margin-right: 0.3rem; }
+
+/* ---------- Weekly report: new format ---------- */
+.weekly-content h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--fg);
+  margin: 0 0 0.75rem;
+}
+.weekly-content h3 code {
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--cat, var(--muted));
+  border: 1px solid color-mix(in srgb, var(--cat, var(--muted)) 40%, transparent);
+  border-radius: 999px;
+  padding: 0.05rem 0.55rem;
+}
+.weekly-content em { color: var(--fg); }
+
+.sub-block { margin: 0 0 2rem; }
+.sub-block ul { padding-left: 1.1rem; }
+.sub-block li { margin-bottom: 0.45rem; line-height: 1.7; font-size: 0.95rem; }
+.sub-block li::marker { color: var(--cat, var(--muted)); }
+
+/* 이번 주 핵심 3가지 */
+.weekly-section[data-kind="key"] {
+  padding: 1.4rem 1.5rem 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.weekly-section[data-kind="key"] h2 { font-size: 1.05rem; }
+.weekly-section[data-kind="key"] ul { padding-left: 1.1rem; margin: 0; }
+.weekly-section[data-kind="key"] li { margin-bottom: 1rem; }
+.weekly-section[data-kind="key"] li::marker { color: var(--pick); }
+
+/* 이번 주 꼭 읽을 것: one card per pick */
+.weekly-section[data-kind="must"] .sub-block {
+  position: relative;
+  padding: 1.25rem 1.4rem 0.4rem;
+  margin-bottom: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.weekly-section[data-kind="must"] .sub-block::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--cat, var(--pick));
+}
+.weekly-section[data-kind="must"] .sub-block p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.8rem; }
+.weekly-section[data-kind="must"] .sub-block p strong { color: var(--fg); }
+.weekly-section[data-kind="must"] .sub-block p:last-child a { box-shadow: none; font-weight: 600; color: var(--cat, var(--accent)); }
