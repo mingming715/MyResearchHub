@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".weekly-banner .title, .weekly-list .title").forEach(humanizeWeekText);
+  // Narrow screens: [연구 피드 | X 피드] tabs. Wide screens ignore data-tab (X lives in the sidebar).
+  var home = document.getElementById("home");
+  document.querySelectorAll(".home-tabs [data-tab]").forEach(function (tab, _, tabs) {
+    tab.addEventListener("click", function () {
+      home.dataset.tab = tab.dataset.tab;
+      tabs.forEach(function (t) { t.setAttribute("aria-selected", String(t === tab)); });
+    });
+  });
+
+  document.querySelectorAll(".weekly-banner .title, .weekly-list .title, .kw-week-title, .side-report-title").forEach(humanizeWeekText);
 
   var panels = document.querySelectorAll(".week-panel");
   var select = document.getElementById("week-select");

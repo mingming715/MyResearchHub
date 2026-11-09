@@ -1,0 +1,15 @@
+{% comment %}Render related items for a list of source URLs. Params: urls, limit (optional).{% endcomment %}
+{% assign all_docs = site.autonomous-hw | concat: site.autonomous-sw | concat: site.ai-general | concat: site.edge-quantization | concat: site.safety-regulation %}
+{% assign lim = include.limit | default: 99 %}
+<ul class="kw-items">
+{% for url in include.urls limit: lim %}
+  {% assign found = false %}
+  {% for doc in all_docs %}{% for item in doc.items %}
+    {% if found == false and item.source_url == url %}
+    <li data-category="{{ doc.category }}"><a href="{{ url }}" target="_blank" rel="noopener">{{ item.title | split: " — " | first }}</a></li>
+    {% assign found = true %}
+    {% endif %}
+  {% endfor %}{% endfor %}
+  {% if found == false %}<li><a href="{{ url }}" target="_blank" rel="noopener">{{ url | remove: "https://" | truncate: 60 }}</a></li>{% endif %}
+{% endfor %}
+</ul>

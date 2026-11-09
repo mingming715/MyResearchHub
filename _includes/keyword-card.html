@@ -1,0 +1,24 @@
+{% comment %}Perplexity-Discover-style keyword card. Params: kw, hero (bool).{% endcomment %}
+{% assign kw = include.kw %}
+{% assign weeks_seen = 0 %}
+{% for r in site.weekly %}{% for k in r.keywords %}{% if k.slug == kw.slug %}{% assign weeks_seen = weeks_seen | plus: 1 %}{% endif %}{% endfor %}{% endfor %}
+{% assign kw_href = '/keywords/' | relative_url | append: '#' | append: kw.slug %}
+<article class="kw-card{% if include.hero %} kw-hero{% endif %}" data-category="{{ kw.category }}">
+  <a class="kw-media{% if kw.image contains 'arxiv.org' %} is-figure{% endif %}" href="{{ kw_href }}" tabindex="-1" aria-hidden="true">
+    {% if kw.image %}<img src="{{ kw.image }}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">{% endif %}
+    <span class="kw-media-label">{{ kw.name }}</span>
+  </a>
+  <div class="kw-body">
+    <div class="kw-eyebrow">
+      <span class="cat-tag">{{ site.data.categories[kw.category] }}</span>
+      {% if include.hero %}<span class="kw-flag">이번 주 대표 키워드</span>{% endif %}
+    </div>
+    <h3 class="kw-name"><a href="{{ kw_href }}">{{ kw.name }}</a></h3>
+    <p class="kw-summary">{{ kw.summary }}</p>
+    {% if include.hero %}{% include keyword-items.html urls=kw.items limit=4 %}{% endif %}
+    <div class="kw-meta">
+      <span>관련 항목 {{ kw.items.size }}개</span>
+      <span>{% if weeks_seen > 1 %}{{ weeks_seen }}주째 등장{% else %}이번 주 처음 등장{% endif %}</span>
+    </div>
+  </div>
+</article>

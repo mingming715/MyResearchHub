@@ -11,4 +11,5 @@ items:
     type: "뉴스"
     summary: "로버트 라타 하원의원은 2017년에도 'SELF-DRIVE Act'를 발의해 하원을 통과시켰지만 상원에서 좌초시킨 전력이 있는데, 2026년 라타와 데비 딩겔 의원이 다시 내놓은 초안은 통과되면 자율주행차 안전만을 다루는 미국 최초의 연방 법률이 된다. 이 법안은 기존 '국가 교통 및 자동차 안전법'에 자율주행차 전용 조항을 신설해 '자동화 운전 시스템'을 SAE 레벨 3~5로 정의하고(SAE가 기준을 바꾸면 교통부가 정의를 갱신할 수 있게 함), 무엇보다 제조사가 안전사례(safety case)를 직접 작성해 규제당국에 제출하도록 의무화하며 이를 근거로 새로운 연방 자동차안전기준(FMVSS)을 제정하도록 요구한다. 앞서 다뤘던 UNECE의 글로벌 기술규정이나 중국의 GB 44721처럼, 미국도 결국 '안전사례'를 자율주행 승인의 공통 언어로 받아들이는 흐름에 합류하려는 움직임으로 읽힌다. 동시에 이는 연방정부가 캘리포니아 DMV처럼 주(州) 단위로 갈라져 있던 미국 자율주행 규제를 통일하려는 시도이기도 해서, 미국 규제 지형이 바뀔 수 있는 분기점으로 지켜볼 만하다."
     source_url: "https://environmentalhealthsafetybrief.sidley.com/2026/01/08/members-of-congress-propose-a-new-bill-to-regulate-autonomous-vehicles/"
+    image: "https://environmentalhealthsafetybrief.sidley.com/wp-content/uploads/sites/4/2025/09/AdobeStock_313022023-final.png"
 ---

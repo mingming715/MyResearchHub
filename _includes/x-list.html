@@ -1,0 +1,16 @@
+{% comment %}X posts for one week. Params: posts (x-feed docs for the week).{% endcomment %}
+{% assign n = 0 %}
+<ul class="x-list">
+{% for doc in include.posts %}{% for item in doc.items %}{% assign n = n | plus: 1 %}
+  <li>
+    <a class="x-post" href="{{ item.source_url }}" target="_blank" rel="noopener">
+      <span class="x-avatar" aria-hidden="true">{{ item.author | remove: "@" | remove: "_" | slice: 0 | upcase }}</span>
+      <span class="x-main">
+        <span class="x-head"><b>{{ item.author }}</b><time>{{ doc.date | date: "%m.%d" }}</time></span>
+        <span class="x-text">{{ item.text }}</span>
+      </span>
+    </a>
+  </li>
+{% endfor %}{% endfor %}
+</ul>
+{% if n == 0 %}<p class="x-empty">이 주에는 X 피드가 없습니다.</p>{% endif %}

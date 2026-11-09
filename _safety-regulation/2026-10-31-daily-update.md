@@ -11,4 +11,5 @@ items:
     type: "뉴스"
     summary: "EU AI Act의 고위험(high-risk) 의무 조항은 대부분 2026년 8월 2일부터 적용되지만, 차량 안전부품으로서 타입 어프루벌(제3자 적합성 평가) 규제를 받는 AI 시스템 — 예를 들어 자동 긴급 제동(AEB) 같은 ADAS 기능 — 은 별도 트랙으로 분류되며, 그 적용 시점이 Digital Omnibus 개정 논의에 따라 2027년 또는 2028년까지 늦춰질 수 있다는 분석이 나왔다. 유럽연합 집행위원회는 2026년 5월 19일 '고위험 AI 시스템 분류'에 대한 초안 가이드라인을 발표했는데, 아직 협의 단계에 머물러 있다. 독일 자동차산업협회(VDA)는 이 분류 기준이 '적용 사례(application) 기반'이라, 차량 안과 주변의 거의 모든 AI 시스템이 고위험으로 분류될 위험이 있다고 반발하고 있다. 이미 ISO 26262·ISO 21448·ISO/PAS 8800 같은 기능안전 규격 체계로 검증받는 AI 시스템에 EU AI Act의 고위험 의무가 또 한 겹 얹히는 셈인데, 두 체계가 서로 어떻게 맞물릴지(또는 충돌할지)가 자동차 업계의 실무 부담을 가를 핵심 쟁점으로 떠올랐다."
     source_url: "https://www.taylorwessing.com/en/insights-and-events/insights/2026/05/ai-act-high-risk-guidelines"
+    image: "https://www.taylorwessing.com/-/media/taylor-wessing/images/social-media/ai_open_graph_image_2500x1306px_1.jpg?as=0&dmc=0&iar=0&thn=0&udi=0?&hash=49F29570B50A75AAB5841022E1E6766A"
 ---

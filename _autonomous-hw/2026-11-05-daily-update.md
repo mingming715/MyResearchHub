@@ -7,10 +7,12 @@ items:
     type: "뉴스"
     summary: "지금까지 자동차 AI SoC는 OEM이 요구하는 연산량이 달라질 때마다 다이(die)를 처음부터 새로 설계해야 했는데, 이는 개발 기간과 비용을 그대로 다음 세대 차량에 떠넘기는 구조였다. TI가 CES 2026에서 공개한 TDA5 SoC 패밀리는 UCIe(Universal Chiplet Interconnect Express) 기반 칩렛 설계를 자동차용 SoC에 적용해, 같은 공통 플랫폼 위에서 C7 NPU를 1개에서 4개까지 끼워 넣는 방식으로 10 TOPS짜리 저가형부터 1200 TOPS짜리 레벨3급까지 하나의 설계로 스케일링한다. TI 엔지니어가 '기존 TDA4 최고 사양이 32 TOPS였는데 TDA5 중간 사양이 이미 400 TOPS이고, 시장이 더 요구하면 처음부터 다시 설계하지 않고 칩렛으로 확장하면 된다'고 설명한 대목이 핵심이다. 24 TOPS/W 이상의 전력 효율과 ASIL D 인증을 겨냥한 안전 아키텍처를 유지하면서도 스케일을 칩렛 레고처럼 다루겠다는 선언인 셈이다. 이는 올해 초 arXiv에 올라온 'Chiplets on Wheels' 리뷰 논문이 소프트웨어 정의 차량(SDV)의 연산 수요 급증에 대응하려면 자동차 SoC도 모놀리식 설계를 벗어나 칩렛화해야 한다고 주장했던 방향과 정확히 맞물리는 사례로, 이 코너가 다뤄온 '안전 인증을 위한 NPU 내부 복제·분할'(Strix) 논의와는 또 다른 축 — '애초에 연산 스케일 자체를 어떻게 모듈화할 것인가'라는 질문을 보여준다."
     source_url: "https://www.automotiveworld.com/news/ti-unveils-automotive-soc-and-radar-chip-at-ces-2026/"
+    image: "https://media.automotiveworld.com/app/uploads/2026/01/05145604/tI-automotive-portfolio-autonomous-driving-applications-scaled.jpg"
     pick: true
     pick_reason: "이번 주 HW의 핵심 흐름인 UCIe 칩렛화가 메이저 벤더 양산 SoC로 들어왔습니다. Renesas·UC Irvine 항목과 함께 읽으면 좋습니다."
   - title: "칩렛으로 쪼개 붙이면 공짜가 아니다 — 멀티칩렛 NPU가 실제 인식 파이프라인에서 치르는 비용"
     type: "논문"
     summary: "TI의 TDA5처럼 '칩렛을 더 끼우면 TOPS가 늘어난다'는 셀링 포인트 뒤에는, 칩렛 사이를 오가는 데이터가 다이 내부 연산보다 훨씬 비싼 지연과 전력을 쓴다는 숨은 비용이 있다. UC Irvine 연구팀은 테슬라 FSD SoC를 참조 아키텍처로 삼아 실제 Autopilot 인식 파이프라인을 프로파일링하고, Simba류의 멀티칩렛 NPU 설계로 같은 워크로드를 쪼개 돌렸을 때 성능이 어떻게 변하는지를 정량적으로 분석했다. 이는 '칩렛이 스케일링의 만능 해법'이라는 산업계의 서사에 대해, 실제 인식 워크로드의 레이어별 통신 패턴에 따라 성능 저하가 균일하지 않다는 걸 보여주는 반대편 증거로 읽을 수 있다. TI가 UCIe로 자동차 SoC를 칩렛화하겠다고 발표한 바로 이 시점에, '그 칩렛 경계를 어디에 그어야 실제 워크로드 성능을 해치지 않는가'라는 질문이 왜 다음 설계 과제로 떠오르는지를 구체적인 수치로 짚어주는 연구다."
     source_url: "https://arxiv.org/abs/2411.16007"
+    image: "https://arxiv.org/html/2411.16007v1/Figures/av_percep_pipe_across.png"
 ---

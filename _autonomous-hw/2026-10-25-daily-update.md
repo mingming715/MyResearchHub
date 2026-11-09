@@ -11,4 +11,5 @@ items:
     type: "뉴스"
     summary: "Texas Instruments가 CES 2026에서 레벨3 자율주행을 겨냥한 TDA5 SoC 패밀리를 공개했다. Arm Cortex-A720AE CPU 코어와 자체 설계한 C7 NPU를 묶어 최대 1,200 TOPS의 연산 성능을 내는 구조로, 패밀리의 첫 제품인 TDA5x-Q1은 2026년 말 일부 완성차 고객에게 샘플이 제공될 예정이다. 이 숫자 자체보다 중요한 건 '레벨2 보조운전까지는 수십~수백 TOPS면 충분했지만, 핸즈오프가 허용되는 레벨3부터는 왜 TOPS 요구량이 한 자릿수 이상 뛰는가'라는 질문이다. 레벨3는 시스템이 스스로 위험을 감지해 운전자에게 제어권을 넘기는 '안전한 이양(fallback)'까지 실시간으로 책임져야 하기 때문에, 중복 인식 경로와 더 무거운 센서 퓨전·예측 모델을 동시에 돌릴 연산 여유가 필요해진다. SoC 벤더들이 왜 매 세대마다 TOPS 숫자를 경쟁적으로 올리는지, 그리고 그 숫자가 실제로 어떤 자율주행 레벨의 요구사항과 연결되는지를 가늠하는 데 참고할 만한 사례다."
     source_url: "https://www.automotiveworld.com/news/ti-unveils-automotive-soc-and-radar-chip-at-ces-2026/"
+    image: "https://media.automotiveworld.com/app/uploads/2026/01/05145604/tI-automotive-portfolio-autonomous-driving-applications-scaled.jpg"
 ---

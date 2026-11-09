@@ -7,6 +7,7 @@ items:
     type: "뉴스"
     summary: "TI의 mmWave 레이더 칩 IWR6243과 카메라를 NVIDIA Holoscan 플랫폼 위에서 결합하는 레퍼런스 아키텍처가 공개됐다. 핵심은 '어디서 퓨전하느냐'다. 지금까지 많은 양산 설계는 레이더와 카메라가 각자 객체(바운딩박스·트랙)를 뽑아낸 뒤 그 결과만 합치는 객체 레벨 퓨전이었는데, 이 구조는 레이더의 로우 신호(포인트클라우드 단계)를 CSI-2로 뽑아 Lattice의 CertusPro-NX FPGA 브리지보드를 거쳐 GPU가 바로 읽을 수 있는 메모리로 흘려보내고, Holoscan이 레이더 신호처리·카메라 전처리·신경망 추론·멀티모달 퓨전을 하나의 그래프 파이프라인으로 스케줄링한다. CPU를 최대한 배제하고 센서 원시 데이터를 GPU로 직접 공급하는 이 '로우 레벨 퓨전' 방식은 비가 오거나 역광·저조도처럼 카메라가 흔들리는 상황에서 레이더가 더 일찍, 더 깊게 보정에 개입할 수 있게 하는데, 이는 자율주행에서 왜 '퓨전 시점'이 센서 종류 자체보다 더 중요한 아키텍처 결정인지를 잘 보여주는 사례다. 데모는 로보틱스/휴머노이드를 겨냥했지만 쓰인 레이더 칩 자체가 자동차급이고 퓨전 구조는 차량 ADAS 설계에도 그대로 옮겨갈 수 있는 문제다."
     source_url: "https://www.edge-ai-vision.com/2026/04/texas-instruments-d3-embedded-lattice-and-nvidia-show-a-practical-radar-camera-fusion-stack-for-robotics/"
+    image: "https://www.edge-ai-vision.com/wp-content/uploads/2026/04/sbaa790-1.png"
   - title: "NPU 블록 하나가 ASIL B를 받았다고 칩 전체가 안전해지는 건 아니다 — VeriSilicon NPU IP 인증이 짚는 '경계'"
     source_url: "https://www.businesswire.com/news/home/20251126894825/en/VeriSilicons-NPU-IP-VIP9000NanoOi-FS-has-Achieved-ISO-26262-ASIL-B-Certification"
     type: "뉴스"

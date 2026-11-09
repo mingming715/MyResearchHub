@@ -7,6 +7,7 @@ items:
     type: "뉴스"
     summary: "지난 6월 24일 UNECE WP.29가 채택한 GTR No.26과 UN Regulation No.185는 레벨3~5 자율주행시스템(ADS)을 다루는 세계 최초의 글로벌 규제 프레임워크다. 핵심은 고정된 성능 수치나 주행거리 기준이 아니라 '안전 케이스(safety case)' 접근이라는 점 — 제조사가 전 생애주기에 걸쳐 감사받는 안전관리체계(SMS)를 운영하고, 자사 ADS가 '불합리한 위험'을 야기하지 않는다는 걸 시뮬레이션·트랙 테스트·실도로 검증으로 구성된 문서화된 논증으로 입증해야 한다. 안전 목표도 특정 숫자가 아니라 '능숙하고 신중한(competent and careful) 인간 운전자'와 동등한 수준이라는 상대적 기준으로 설정됐고, 이와 맞물려 기존 UN 규정 중 약 90개(제조사 보고로는 88개 규정에 걸친 92개 개정안)를 손봐 운전대·페달이 없는 차량에도 적용되도록 했다. 캐나다·중국·EU·일본·영국·미국 등 주요 시장이 이 틀을 지지했다는 점에서, 지금까지 미국은 주 단위, 중국은 자국 GB 표준, EU는 자체 프레임워크로 따로 움직이던 '규제 파편화'에 처음으로 공통 기준선이 생긴 셈이다 — 다만 이 코너에서 다룬 중국 GB 44721처럼 공통 틀 위에서도 각국이 더 엄격한 자국 기준을 얹는 '조화 속 분기'는 여전히 진행형이며, 11월 7~11일 열리는 WP.29 200차 회의에서 이 규정과 연동된 가이던스 문서·추가 개정안의 공식 채택이 예정돼 있어 이번 주가 그 후속 전개를 지켜볼 시점이다."
     source_url: "https://www.bennettjones.com/Insights/Blogs/2026/08/First-Global-Regulatory-Framework-For-Autonomous-Vehicles"
+    image: "https://edge.sitecorecloud.io/bennettjone9062-bennettjoneecd0-prod5674-502b/media/Project/BennettJonesHeadless/BennettJones/Images/Insights/Blogs/First-Global-Regulatory-Framework-For-Autonomous-Vehicles.jpg?h=640&iar=0&w=640"
     pick: true
     pick_reason: "세계 최초의 ADS 통합 국제 규정(GTR 26 / UN R185). 앞으로 나올 각국 자율주행 규제가 전부 이 틀을 기준으로 움직입니다."
   - title: "그 '능숙하고 신중한 운전자' 모델, 실제 운전자처럼 반응하지 않았다 — R157 벤치마크 모델을 38개 실제 근접사고로 검증한 결과"
